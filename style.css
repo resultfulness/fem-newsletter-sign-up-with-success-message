@@ -69,6 +69,7 @@ body {
   margin: 0;
   font-weight: var(--fw-bold);
   font-size: var(--fs-800);
+  line-height: 1;
 }
 
 .card.form-card {
@@ -184,7 +185,7 @@ button::after {
   }
 
   .form-card form {
-    padding: 0 1.5rem 2.5rem;
+    padding: clamp(0.1rem, 2.5vw, 1rem) 1.5rem 2.5rem;
   }
 
   .card h2 {
@@ -194,4 +195,31 @@ button::after {
 
 .card.success-card {
   display: none;
+}
+
+.card.success-card {
+  max-width: 500px;
+  padding: 3rem 4rem 4rem;
+  place-content: center;
+  gap: 1rem;
+}
+
+.success-card img {
+  margin-bottom: 2rem;
+}
+
+@media (width < 930px) {
+  .card.success-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .success-card button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 1.5rem - 1.5rem);
+    margin: 3rem 1.5rem;
+  }
 }
